@@ -19,9 +19,9 @@ torch.manual_seed(rnd_seed)
 print("Random Seed: ", rnd_seed)
 
 #Change the settings to your own dataset paths
-opts = GANOptions(data_path = "D:/GAN/Databases/tiles/", file_extension = "png", 
-                  output_path = "D:/GAN/Results/tiles/",
-                  image_size = 32)
+opts = GANOptions(data_path = "./dataset", file_extension = "png", 
+                  output_path = "./results",
+                  image_size = 16)
 
 #The settings I used for my article (https://playerone-studio.com/gan-2d-tiles-generative-adversarial-network)
 opts.generator_batchnorm = True
@@ -40,7 +40,7 @@ opts.workers_nbr = 0;
 opts.transforms = [
     transforms.Resize(int(opts.image_size), Image.BICUBIC),
     transforms.ToTensor(), #do not forget to transform image into a tensor
-    transforms.Normalize((.5, .5, .5), (.5, .5, .5))
+    transforms.Normalize((.5, .5, .5, .5), (.5, .5, .5, .5))
     #RandomNoise(0.01) #adding noise might prevent the discriminator from over-fitting
 ]
 

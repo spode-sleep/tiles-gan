@@ -14,7 +14,7 @@ import torchvision.utils
 from torchvision.utils import save_image
 
 class GANOptions:
-    def __init__(self, image_size = 32, n_epochs = 10000, latent_dim = 50, batch_size = 128, data_path = "", file_extension = "", output_path = "", workers_nbr = 8, transform_list = []):
+    def __init__(self, image_size = 32, n_epochs = 2000, latent_dim = 50, batch_size = 32, data_path = "", file_extension = "", output_path = "", workers_nbr = 8, transform_list = []):
         self.epoch_number = n_epochs #number of epochs
         self.latent_dim = latent_dim #size of latent space
         self.batch_size = batch_size #size of mini-batch
@@ -24,7 +24,7 @@ class GANOptions:
         self.file_extension = file_extension #file extension
         self.workers_nbr = workers_nbr #number of workers for data loading
         self.image_size = image_size #size of the image
-        self.channels_nbr = 3 #number of channels in the image
+        self.channels_nbr = 4 #number of channels in the image
         self.transforms = transform_list
         
         self.output_path = output_path #path for output

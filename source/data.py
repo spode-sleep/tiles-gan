@@ -21,7 +21,7 @@ class ImageDataset(torch.utils.data.Dataset):
         
     def __getitem__(self, index):
         filepath = self.files[index % len(self.files)];
-        image = self.transform(Image.open(filepath).convert('RGB'))
+        image = self.transform(Image.open(filepath).convert('RGBA'))
         return image
 
 class ReplayBuffer():
